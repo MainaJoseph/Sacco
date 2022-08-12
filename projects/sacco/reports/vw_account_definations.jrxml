@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vw_account_definations" language="groovy" pageWidth="802" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d7664ff1-dc29-481b-baa1-de215e1893a3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="filterid" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_product_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT vw_account_definations.account_defination_name, vw_account_definations.start_date, vw_account_definations.is_active, vw_account_definations.use_key_name, vw_account_definations.activity_type_name, vw_account_definations.charge_activity_name, vw_account_definations.activity_frequency_name, vw_account_definations.account_number, vw_account_definations.fee_amount, vw_account_definations.fee_ps, vw_account_definations.has_charge
+
+FROM vw_account_definations
+
+WHERE (vw_account_definations.product_id = $P{p_product_id})]]>
+	</queryString>
+	<field name="account_defination_name" class="java.lang.String"/>
+	<field name="start_date" class="java.sql.Date"/>
+	<field name="is_active" class="java.lang.Boolean"/>
+	<field name="use_key_name" class="java.lang.String"/>
+	<field name="activity_type_name" class="java.lang.String"/>
+	<field name="charge_activity_name" class="java.lang.String"/>
+	<field name="activity_frequency_name" class="java.lang.String"/>
+	<field name="account_number" class="java.lang.String"/>
+	<field name="fee_amount" class="java.lang.Float"/>
+	<field name="fee_ps" class="java.lang.Float"/>
+	<field name="has_charge" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="1" y="0" width="110" height="15" forecolor="#000000" uuid="199fcb59-b173-4b23-8036-203158c11d31"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Account Defination]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="0" width="47" height="15" forecolor="#000000" uuid="b1da2d43-b796-4199-af4a-5321a905f1d3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="158" y="0" width="45" height="15" forecolor="#000000" uuid="a39fe5ff-c823-4266-a298-8499ade66bac"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Active]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="203" y="0" width="100" height="15" forecolor="#000000" uuid="586163e8-3742-441c-aba2-834c1129f339"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Use]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="303" y="0" width="100" height="15" forecolor="#000000" uuid="911aa5b6-abb7-4e5b-8934-ca7724269a52"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Activity Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="403" y="0" width="100" height="15" forecolor="#000000" uuid="d5069693-6e57-4b1c-95a8-565d6fc4434c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Charge Activity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="503" y="0" width="85" height="15" forecolor="#000000" uuid="300d2701-efd5-41a3-8ada-7ca1043db76b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Activity Frequency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="588" y="0" width="80" height="15" forecolor="#000000" uuid="c088a6bf-eb8e-460f-aec7-f58379cce274"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Account Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="668" y="0" width="45" height="15" forecolor="#000000" uuid="cd85ab80-93e3-4e1a-95f9-c003fb8ccab0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Fee Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="713" y="0" width="45" height="15" forecolor="#000000" uuid="33ca5eb3-708c-4d5b-acdc-a2ef018458a1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Fee %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="758" y="0" width="45" height="15" forecolor="#000000" uuid="19de2293-25ad-419a-9703-9ac5e7f01efd"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Charge]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="1" y="0" width="110" height="15" uuid="ea6cff3b-81d7-4f92-8e52-220cfdd822e0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_defination_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="Detail" x="111" y="0" width="47" height="15" uuid="160453ab-1e36-4058-83b6-4cda8c06aab7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{start_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="158" y="0" width="45" height="15" uuid="f35208b2-91dc-4609-ae7f-31efba8f3670"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{is_active}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="203" y="0" width="100" height="15" uuid="79596559-c0a7-4af3-80c5-261d260c0258"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{use_key_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="303" y="0" width="100" height="15" uuid="eaa0b65a-3044-4bd9-bb5e-b924c2f203c9"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{activity_type_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="403" y="0" width="100" height="15" uuid="a09b98a0-a61f-4fb2-8dcb-b9b9f1e8d446"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{charge_activity_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="503" y="0" width="85" height="15" uuid="3d51d785-660c-4ad8-bdde-5fa6089228c7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{activity_frequency_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="588" y="0" width="80" height="15" uuid="71e3d530-4ba0-4d89-9c3b-f8af7b65b690"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{account_number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="668" y="0" width="45" height="15" uuid="a106511d-05a9-4de4-bd33-d41c60ddd654"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fee_amount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="713" y="0" width="45" height="15" uuid="63cfdeab-9899-4129-ae4a-98e5880ef78d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fee_ps}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="758" y="0" width="45" height="15" uuid="d5cfca43-b98f-4299-93e6-e215f6e2a11c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{has_charge}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<TOMCAT base.dir="build/webapps" app.base="baraza" contextPath="/sacco"  context="context.xml" init.xml="sacco.xml"	repository="repository" port="9090">
+
+</TOMCAT>
+

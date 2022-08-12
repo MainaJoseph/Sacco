@@ -1,0 +1,99 @@
+Features
+------------
+ - Multi-Sacco management
+ - Member application
+ - Loan management
+ - Contributions management
+ - Sacco shares and Commodities trade
+ - Multi-currency transactions
+ - Sacco Asset management
+ - Member investment management
+ - Dynamic member and Sacco report generation
+ - Sacco liabilities management
+ - Sacco employee management
+ - Dynamic Sacco contributions generation
+ - Batch Loan processing
+ - Sacco billing module
+ - Scheduled Transactions
+ - Accounting
+ - Scheduled notifications and statement updates 
+
+Setup
+-----------
+
+1. install Postgresql http://www.postgresql.org/ above version 9.6
+	Linux Installation
+	- yum install postgresql-server
+	- service postgresql initdb - (Optional - will clear all databases)
+	- service postgresql start
+
+	Windows Installation
+	- Download the setup file and install
+
+	{ To make the installation easier you can set the password for user postgres during the installation to Baraza2011 }
+	{ Remember to change it for a live deployment }
+
+2. install Java http://www.oracle.com/technetwork/java/javase/downloads/index.html version 1.7.45 and above (latest version recommended)
+
+3. Download sacco.app.2.1.1.zip and unzip it on any folder
+
+4. Run the Setup
+	cd ./sacco.app.2.1.1
+	Linux : ./setup.sh
+	Windows : double click on setup.bat in app folder
+
+5. Click on 
+	Test Connection - {To test connection to the database}
+	Save Configutations - {In case you change user name or password connecting to the database }
+	Create New - {Create a new blank database}
+	Create Demo - {Create a demo database}
+
+
+6. Running the appplication
+	Web Application
+	Linux : sh server.sh
+	Windows : server.bat
+	go to browser http://localhost:9090/sacco
+
+	Application
+	Linux : sh baraza.sh
+	Windows : baraza.bat
+
+	IDE
+	Application
+	Linux : sh ide.sh
+	Windows : ide.bat
+
+----------------------------------------------------------------------------
+-----------Deploying the .war file (sacco.app.2.1.1.war)--------------------
+
+7. Download the apache tomcat version 7 to your local computer and configure it(e.g app manager and file upload max size...etc).
+	(by default the tomcat runs on port 8080)
+
+8. Go to browser http://localhost:8080
+	click Manager App and enter your login credentials
+	Scroll down to section "WAR file to deploy"
+	click "Browse" select the sacco.app.2.1.1.war, THEN click Deploy.
+
+9. Else copy the sacco.app.2.1.1.war to tomcat webapps folder then start the tomcat service
+
+
+10. Running the appplication
+	Go to browser http://localhost:8080/sacco.app.2.1.1
+
+
+USER PASSWORDS
+username:	root
+password:	baraza
+
+DEMO Accounts
+Administrator
+    username:	admin
+    password:	baraza
+
+To login as member, login as admin first, then, go to Configurations --> Entitys --> members,
+double click on member then click --> Edit Entitys, use the username and password indicated 
+on the form to login as a member. 
+
+
+

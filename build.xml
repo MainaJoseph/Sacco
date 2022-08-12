@@ -1,0 +1,116 @@
+<project name="openBaraza" default="build" basedir=".">
+	<description>
+		openBaraza build file
+	</description>
+
+	<!-- set global properties for this build -->
+	<property name="src" location="src"/>
+	<property name="build" location="build"/>
+	<property name="build.lib" location="build/lib"/>
+	<property name="classes.dir" value="${build}/classes"/>
+	<property name="projects" value="projects/"/>
+	<property name="tomcat" value="/opt/tomcat/webapps/"/>
+
+	<path id="classpath">
+		<fileset dir="${build.lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+    <target name="init">
+        <delete dir="${classes.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+    </target>
+
+	<target name="compile" description="compile the source" depends="init">
+
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac debug="true" srcdir="${src}" destdir="${classes.dir}" includeAntRuntime="false">
+			<classpath refid="classpath"/>
+			<exclude name="test/**"/>
+		</javac>
+	</target>
+
+	<target name="build" depends="compile" description="generate the distribution">
+
+		<!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+		<jar jarfile="${build}/baraza.jar" basedir="${classes.dir}" manifest="${src}/manifest">
+			<fileset dir="${src}">
+				<include name="org/baraza/resources/**" />
+			</fileset>
+		</jar>
+		<jar jarfile="${build}/baraza.app.jar" basedir="${classes.dir}" manifest="${src}/manifest.app">
+			<fileset dir="${src}">
+				<include name="org/baraza/resources/**" />
+			</fileset>
+		</jar>
+
+        <delete dir="${classes.dir}"/>
+	</target>
+
+    <target name="javadoc">
+		<javadoc destdir="${build}/api" author="true" version="true" use="true" windowtitle="openBaraza API" classpathref="classpath">
+			<packageset dir="${src}" defaultexcludes="yes">
+				<include name="org/**"/>
+				<exclude name="test/**"/>
+			</packageset>
+
+			<doctitle><![CDATA[<h1>openBaraza API</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Copyright &#169; 2018 openBaraza. All Rights Reserved.</i>]]></bottom>
+			<tag name="todo" scope="all" description="To do:"/>
+			<link href="http://docs.oracle.com/javase/7/docs/api/"/>
+		</javadoc>
+	</target>
+
+    <target name="baraza">
+        <java jar="${build}/baraza.jar" fork="true">
+			<arg value="run"/>
+			<arg value="${projects}"/>
+		</java>
+    </target>
+
+    <target name="tomcat.baraza">
+        <java jar="${build}/baraza.jar" fork="true">
+                        <arg value="tomcat"/>
+                        <arg value="${projects}"/>
+			<arg value="baraza"/>
+                </java>
+    </target>
+
+    <target name="server">
+        <java jar="${build}/baraza.jar" fork="true">
+			<arg value="server"/>
+			<arg value="${projects}"/>
+		</java>
+    </target>
+
+    <target name="ide">
+        <java jar="${build}/baraza.jar" fork="true">
+			<arg value="develop"/>
+			<arg value="${projects}"/>
+		</java>
+    </target>
+
+    <target name="setup.new">
+        <java dir="." classname="org.baraza.ide.BSetup" fork="true">
+			<arg value="./projects/hr/configs/"/>
+			<arg value="setup.sql"/>
+			<classpath>
+				<pathelement location="${build}/baraza.jar"/>
+				<pathelement path="${build.lib}"/>
+			</classpath>
+		</java>
+    </target>
+
+    <target name="setup.demo">
+        <java dir="." classname="org.baraza.ide.BSetup" fork="true">
+			<arg value="./projects/hr/configs/"/>
+			<arg value="demo.sql"/>
+			<classpath>
+				<pathelement location="${build}/baraza.jar"/>
+				<pathelement path="${build.lib}"/>
+			</classpath>
+		</java>
+    </target>
+
+</project>

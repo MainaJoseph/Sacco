@@ -1,0 +1,6 @@
+<APPLIST mode="run" encryption="accessbaaccessba" dbclass="org.postgresql.Driver" dbpassword="1234" dbtemplate="baraza" logfile="baraza.log" greeting="Open Baraza Server" loglevel="info" dbusername="jm" dbpath="jdbc:postgresql://localhost/postgres">
+	<APP path="sacco" dbname="sacco" auth="entity" dbclass="org.postgresql.Driver" dbpassword="1234" org="org_id" dbusername="jm" dbpath="jdbc:postgresql://localhost/sacco" xmlfile="hr.xml">SACCO</APP>
+	<APP path="baraza" dbname="baraza" auth="entity" dbclass="org.postgresql.Driver" dbpassword="1234" dbusername="jm" dbpath="jdbc:postgresql://localhost/baraza" xmlfile="baraza.xml">Baraza</APP>
+	<SERVER path="sacco" dbname="sacco" dbclass="org.postgresql.Driver" dbpassword="1234" disable="true" dbusername="jm" dbpath="jdbc:postgresql://localhost/sacco" xmlfile="mail.xml">Mailing Server</SERVER>
+	<SERVER path="sacco" dbname="sacco" dbclass="org.postgresql.Driver" dbpassword="1234" disable="false" dbusername="jm" dbpath="jdbc:postgresql://localhost/sacco" xmlfile="tomcat.xml">Tomcat Server</SERVER>
+</APPLIST>

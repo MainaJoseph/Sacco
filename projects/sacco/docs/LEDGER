@@ -1,0 +1,52 @@
+TODO
+
+Activity status - 
+	1. Completed - fully done
+	2. UnCleared - Not gone though
+	3. Processing - pending to be processed
+	4. Commited - allocated for future
+
+Types of transactions
+- Receive cash or cheque or mpesa or ecash
+Cr customer account for cheque wait value date and clearance
+Dr the bank
+
+- Withdraw money cheque or cash
+Dr customer account for cheque wait for clearance
+Cr the bank
+
+- Service charge
+Dr customer account
+Cr service account
+
+- Transfer amount
+Dr customer
+Cr recepient
+
+- Online purchase would need API
+Dr customer acocunt
+Cr the vendor
+
+- loan
+Dr customer account on picking loan
+Cr Customer account receiving the money
+
+- loan intrest
+Cr Intrest account
+Dr Customer account
+
+- Loan penalty
+Cr loan penalty account
+Dr Customer account
+
+- Loan payment
+Make Payment to normal account first
+Cr Loan account
+Dr Customer account
+
+
+Intrest calculations
+1. Compound intrest
+2. Reducing balance flat payment
+3. Reducing balance reduced payments
+

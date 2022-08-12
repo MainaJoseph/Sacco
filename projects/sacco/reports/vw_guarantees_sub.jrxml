@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vw_guarantees" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7bde0d5e-da7f-4641-be05-cdadfe44ba2c">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="filterid" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="organd" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT vw_guarantees.guarantor_id, vw_guarantees.guarantor_name, vw_guarantees.org_id, vw_guarantees.guarantee_id, vw_guarantees.guarantee_amount, vw_guarantees.guarantee_accepted, vw_guarantees.accepted_date, vw_guarantees.application_date, vw_guarantees.is_active, vw_guarantees.approve_status, vw_guarantees.action_date, vw_guarantees.details, vw_guarantees.loan_id
+FROM vw_guarantees
+
+WHERE (vw_guarantees.loan_id = '$P!{filterid}')
+$P!{organd}]]>
+	</queryString>
+	<field name="guarantor_id" class="java.lang.Integer"/>
+	<field name="guarantor_name" class="java.lang.String"/>
+	<field name="org_id" class="java.lang.Integer"/>
+	<field name="guarantee_id" class="java.lang.Integer"/>
+	<field name="guarantee_amount" class="java.lang.Float"/>
+	<field name="guarantee_accepted" class="java.lang.Boolean"/>
+	<field name="accepted_date" class="java.sql.Timestamp"/>
+	<field name="application_date" class="java.sql.Timestamp"/>
+	<field name="is_active" class="java.lang.Boolean"/>
+	<field name="approve_status" class="java.lang.String"/>
+	<field name="action_date" class="java.sql.Timestamp"/>
+	<field name="details" class="java.lang.String"/>
+	<field name="loan_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" mode="Opaque" x="0" y="0" width="595" height="20" backcolor="#F2EBDF" uuid="7edcead3-63d8-4e0f-a5a7-b23c985996b5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Guarantors]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="2" y="0" width="89" height="15" forecolor="#000000" uuid="030cf042-6a51-4af3-b726-e1531fbfd0a4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Guarantor Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="92" y="0" width="87" height="15" forecolor="#000000" uuid="f0180233-5538-40f3-b6ba-17b61fd0d503"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Guarantee Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="179" y="0" width="46" height="15" forecolor="#000000" uuid="c476609f-f299-4c05-9fa0-2e3e0365fdd3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Accepted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="225" y="0" width="67" height="15" forecolor="#000000" uuid="f60df615-0fde-435f-9019-bc813df5ad80"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Accepted Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="293" y="0" width="75" height="15" forecolor="#000000" uuid="0ce45ac9-6316-4cb8-8773-2a213aaf2fcb"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Application Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="0" width="40" height="15" forecolor="#000000" uuid="d1671a2a-7546-44be-b951-953810421ab6"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Active]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="410" y="0" width="68" height="15" forecolor="#000000" uuid="c145cf45-3374-4f4b-9ebd-394ec9f491fa"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Approve Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="480" y="0" width="115" height="15" forecolor="#000000" uuid="09263224-e885-40b3-bc2f-bf01a4d326a2"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Details]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="2" y="0" width="89" height="15" uuid="c471c706-2283-470c-ac71-91695fc0906b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{guarantor_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+				<reportElement style="Detail" x="92" y="0" width="75" height="15" uuid="80442027-2198-44c0-8181-4191e6b7bc9a"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{guarantee_amount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="179" y="0" width="46" height="15" uuid="466368a2-bdd3-4b58-8043-78b0fee99682"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{guarantee_accepted}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd-MMM-yy" isBlankWhenNull="true">
+				<reportElement style="Detail" x="225" y="0" width="67" height="15" uuid="75a775b7-d099-441d-ba53-333936df5dad"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{accepted_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd-MMM-yy" isBlankWhenNull="true">
+				<reportElement style="Detail" x="293" y="0" width="75" height="15" uuid="29ab68aa-35b3-494f-afdd-d4c8da9c57ed"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{application_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="370" y="0" width="40" height="15" uuid="c0c31a70-354a-43f8-85e3-17799d0e41fd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{is_active}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="410" y="0" width="68" height="15" uuid="89c495e9-3bbe-4024-b375-59274499514c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{approve_status}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="480" y="0" width="115" height="15" uuid="f82f373a-014e-4e8a-81fd-fc7d6543446b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{details}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

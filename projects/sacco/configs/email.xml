@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<ESCALATION title="Sacco Mails"  processdelay="2"
+    host="mail.openbaraza.org" mailuser="hcm.openbaraza" mailpassword="hcm_invent" mailfrom="info@openbaraza.org"
+    inbox="INBOX" sentbox="INBOX.Sent" smtppauth="true" imapssl="true"
+    reportpath="/opt/baraza/projects/sacco/">
+
+    <REPORT name="Entitys" keyfield="sys_emailed_id" action="Emailed" actioncount="1" 
+            table="sys_emails, sys_emailed, entitys"
+            where="(entitys.entity_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)
+            AND (sys_emails.sys_email_id = sys_emailed.sys_email_id) AND (sys_emailed.email_type = 1)">
+        <SUBJECT title="subject">sys_emails.title</SUBJECT>
+        <ADDRESS title="address">entitys.primary_email</ADDRESS>
+        <BODYFIELD reference="{{name}}" basetable="entitys">entity_name</BODYFIELD>
+        <BODYFIELD reference="{{username}}" basetable="entitys">user_name</BODYFIELD>
+        <BODYFIELD reference="{{password}}" basetable="entitys">first_password</BODYFIELD>
+        <BODYFIELD reference="{{narrative}}" basetable="sys_emailed">narrative</BODYFIELD>
+        <BODYFIELD reference="{{mail_body}}" basetable="sys_emailed">mail_body</BODYFIELD>
+        <FIELD title="Body" basetable="sys_emails">details</FIELD>
+    </REPORT>
+
+    <REPORT name="Subscriptions Notifications" keyfield="sys_emailed_id" action="Emailed" actioncount="1" 
+            table="sys_emails,sys_emailed,subscriptions,vw_entitys"
+         where="(subscriptions.entity_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)
+            AND (vw_entitys.entity_id = subscriptions.entity_id) AND (sys_emails.sys_email_id = sys_emailed.sys_email_id)">
+        
+         <SUBJECT title="subject">sys_emails.title</SUBJECT>
+        
+        <ADDRESS title="address">vw_entitys.primary_email</ADDRESS>
+        <BODYFIELD reference="{{name}}" basetable="vw_entitys">entity_name</BODYFIELD>
+        <BODYFIELD reference="{{username}}" basetable="vw_entitys">user_name</BODYFIELD>
+        <BODYFIELD reference="{{password}}" basetable="vw_entitys">first_password</BODYFIELD>
+        <FIELD title="Body" basetable="sys_emails">details</FIELD>
+        
+    </REPORT>
+	
+	 <REPORT name="Applicant Notifications" keyfield="sys_emailed_id" action="Emailed" actioncount="1" 
+            table="sys_emails,sys_emailed,applicants,vw_entitys"
+         where="(applicants.entity_id = sys_emailed.table_id) AND (sys_emailed.emailed = false)
+            AND (vw_entitys.entity_id = applicants.entity_id) AND (sys_emails.sys_email_id = sys_emailed.sys_email_id)">
+        
+         <SUBJECT title="subject">sys_emails.title</SUBJECT>
+        
+        <ADDRESS title="address">vw_entitys.primary_email</ADDRESS>
+        <BODYFIELD reference="{{name}}" basetable="vw_entitys">entity_name</BODYFIELD>
+        <BODYFIELD reference="{{username}}" basetable="vw_entitys">user_name</BODYFIELD>
+        <BODYFIELD reference="{{first_password}}" basetable="vw_entitys">first_password</BODYFIELD>
+		<BODYFIELD reference="{{org_name}}" basetable="vw_entitys">org_name</BODYFIELD>
+        <FIELD title="Body" basetable="sys_emails">details</FIELD>
+        
+    </REPORT>
+    
+    <REPORT name="WorkFlow Approval" keyfield="sys_emailed_id" action="Emailed" actioncount="1" 
+            table="sys_emailed, vw_workflow_approvals"
+            where="(vw_workflow_approvals.table_id = sys_emailed.table_id) AND (sys_emailed.emailed = false) 
+                    AND (sys_emailed.table_name = 'vw_workflow_approvals') AND (sys_emailed.email_type = 1)">
+        <ADDRESS title="address">vw_workflow_approvals.org_primary_email</ADDRESS>
+        <SUBJECT title="subject">vw_workflow_approvals.workflow_narrative</SUBJECT>
+        <FIELD title="Body" basetable="vw_workflow_approvals">approve_email</FIELD>
+    </REPORT>
+    
+    <REPORT name="WorkFlow Rejection" keyfield="sys_emailed_id" action="emailed" actioncount="1" 
+            table="sys_emailed, vw_workflow_approvals"
+            where="(vw_workflow_approvals.table_id = sys_emailed.table_id) AND (sys_emailed.emailed = false) 
+                    AND (sys_emailed.table_name = 'vw_workflow_approvals') AND (sys_emailed.email_type = 2)">
+        <ADDRESS title="address">vw_workflow_approvals.org_primary_email</ADDRESS>
+        <SUBJECT title="subject">vw_workflow_approvals.workflow_narrative</SUBJECT>
+        <FIELD title="Body" basetable="vw_workflow_approvals">reject_email</FIELD>
+    </REPORT>
+    
+</ESCALATION>
+

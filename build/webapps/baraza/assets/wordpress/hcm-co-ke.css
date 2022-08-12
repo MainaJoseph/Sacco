@@ -1,0 +1,431 @@
+/*font-family: 'FF Tisa Sans Pro Bold'
+font-family: 'FF Tisa Sans Pro Light'
+font-family: 'FF Tisa Sans Pro Medium'
+font-family: 'FF Tisa Sans Pro Regular'*/
+.infographic-font{
+  font-family: "FF Tisa Sans Pro Light";
+}
+.design-full-screen.page.layout-full-width .content-area > :last-child {
+    padding-bottom: 0px;
+  width:100%;
+}
+/* Enter Your Custom CSS Here */
+.body{
+  background: #f5f5f5;
+}
+
+.white{
+  /*color:#23282d;*/
+  color:#090808;
+  /*font-family:Arial;*/
+  font-family:'Droid Sans';
+  /*font-family:'PT Sans';*/
+  /*font-family:"Open Sans", sans-serif;*/
+  font-size: 16px;
+  font-weight:normal;
+  letter-spacing:0px;
+}
+.font-white{
+  color:#fff;
+}
+.sidebar-full-screen .custom-query-slider .slide {
+    height: 430px;
+}
+
+.h {
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: inherit;
+  	letter-spacing:2px;
+    text-transform: uppercase;
+    /*color:#199CD8;*/
+  color:#090808;
+}
+.heading-two {
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: inherit;
+  	letter-spacing:1px;
+    text-transform: uppercase;
+    letter-spacing:2px;
+  	color:#56afe2;/*#444;*/
+}
+
+/*Fonts footer*/
+.footer-font-head{
+  color:#FFF;
+  /*color:#090808;*/
+  font-size:20px;
+   margin-left:120px;
+}
+.footer-font-body{
+  color:#FFF;
+  /*color:#090808;*/
+  font-size:12px;
+  font-family: "Open Sans", sans-serif;
+  margin-left:120px;
+}
+/*decrease space between the forum ribbon and the footer in Home*/
+.design-full-screen .content-sidebar-wrapper {
+	background: none;
+	box-shadow: none;
+	margin-bottom: 0px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+/*credits and year*/
+.site-footer {
+    padding-bottom: 0px;
+    text-align: center;
+    color: #555555;
+  	background-color:#222222;
+  	border-top:0.35em solid #56afe2;
+    /*border-top:0.35em solid #666666;*/
+}
+@media (min-width: 768px) {
+	.site-footer .copyright {
+		border-top: none;
+	}
+	 /* hides the hr at the footer*/
+	.design-full-screen .site-footer .copyright {
+		border-top: 0px solid #eee;/*Changed from 1px to hide the line*/
+	}
+}
+/*menu top blue strip*/
+.navbar-fixed-top {
+    border-width: 0;
+    z-index: 1000;
+    border-bottom: 6px solid #56afe2;
+}
+/*
+Home css
+*/
+/*Footer space near*/
+.design-full-screen .custom-sidebar .widget {
+	/*! padding-top: 20px; */
+	/*! padding-bottom: 20px; */
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.cute-font{
+ font-family:"proxima-nova", Arial, sans-serif;
+  color:#474747;
+}
+
+.title{
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-family: inherit;
+  	letter-spacing:1px;
+    text-transform: uppercase;
+
+}
+/*reduces the bottom thickness*/
+.design-full-screen .content-sidebar-wrapper{
+  padding-bottom: 0px;
+}
+.design-full-screen.page.layout-full-width .content-area > :last-child {
+    padding-bottom: 0px;
+}
+
+.hentry{
+  border-bottom:#f3f3f3 0px solid;
+}
+
+.design-full-screen .custom-sidebar {
+  /*background-color:rgb(51, 51, 51);*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.single .site-content, .page .site-content {
+    margin-top: 0px;
+}
+
+.site-footer .content-area{
+  margin-bottom; -20px;
+  padding-bottom; 0px;
+}
+/*On the home forum page*/
+#bbpress-forums li.bbp-header{
+ /*   background: #f3f3f3;*/
+    border-top: none;
+   border-bottom: 2px solid #3498db;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    line-height: 10em;
+  padding-bottom:27px;
+}
+#bbpress-forums li.bbp-header {
+    background: none;
+}
+#bbpress-forums li.bbp-footer {
+    background: none;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+}
+
+#bbpress-forums ul.bbp-forums{
+  border: none;
+}
+/*Search bottom have space*/
+#bbpress-forums div.bbp-search-form {
+    float: right;
+    padding-bottom: 40px;
+}
+/*Content box*/
+#bbpress-forums li.bbp-body ul.forum, #bbpress-forums li.bbp-body ul.topic {
+    border-top: none;
+    overflow: hidden;
+    padding: 8px;
+}
+
+#bbpress-forums div.odd, #bbpress-forums ul.odd {
+    background-color: #fff;
+   /* border-bottom: 1px solid #eee;*/
+  
+}
+
+#bbpress-forums li.bbp-body ul.forum, #bbpress-forums li.bbp-body ul.topic {
+    border-bottom: 50% #eee;
+    overflow: hidden;
+    padding: 8px;
+}
+
+
+/*CSS for hr on the titles*/
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: #00a0d2;
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+/*hr general*/
+hr.style-evin { padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; } hr.style-evin:after { content: "§"; display: inline-block; position: relative; top: -0.7em; font-size: 1.5em; padding: 0 0.25em; background: white; }
+
+hr.style-recruit { padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; } hr.style-recruit:after { content: "BARAZA RECRUITMENT"; display: inline-block; position: relative; top: -0.7em; font-size: 1.5em; padding: 0 0.25em; background: white; }
+
+/*Removes the hr at the top of pages*/
+.page .page .entry-header {
+    padding-bottom: 36px;
+    border-bottom: 0px solid #eee;
+}
+
+/* Single-direction drop shadow */ 
+hr.evins-hr-shadow-two
+{ 
+  height: 12px; 
+  border: 0; 
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); 
+  width:100%;
+}
+.evins-hr-shadow 
+{ 
+  border: 0; 
+  height: 1px; 
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
+  width:100%;
+}
+
+.evin-content {
+    display: block;
+    margin: 0.5em 0;
+    padding: 1.5em;
+    /*border-left: 10px solid #DDD;*/
+  	border-left: 10px solid #56afe2;
+    background: #F8F8F8;
+    color: #555;
+    /*font-style: italic;*/
+}
+
+.evin-center-footer{
+  margin-left:120px;
+}
+/*image link*/
+a img {
+    background-color: transparent;
+  	border: 0;
+}
+/*bottomhomeinfographics -no space*/
+.design-full-screen.page.layout-full-width .hentry {
+    max-width: 100%;
+    padding: 0px;
+    margin: 0;
+}
+/*login template css*/
+body {
+    background: #e9e9e9;
+    color: #666666;
+    font-family: 'RobotoDraft', 'Roboto', sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Pen Title */
+.pen-title {
+    padding: 50px 0;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.pen-title h1 {
+    margin: 0 0 20px;
+    font-size: 48px;
+    font-weight: 300;
+}
+.pen-title span {
+    font-size: 12px;
+}
+.pen-title span .fa {
+    color: #33b5e5;
+}
+.pen-title span a {
+    color: #33b5e5;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Form Module */
+.form-module {
+    position: relative;
+    background: #ffffff;
+    max-width: 320px;
+    width: 100%;
+    border-top: 5px solid #33b5e5;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+.form-module .toggle {
+    cursor: pointer;
+    position: absolute;
+    top: -0;
+    right: -0;
+    background: #33b5e5;
+    width: 30px;
+    height: 30px;
+    margin: -5px 0 0;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+}
+.form-module .toggle .tooltips {
+    position: absolute;
+    top: 5px;
+    right: -65px;
+    display: block;
+    background: rgba(0, 0, 0, 0.6);
+    width: auto;
+    padding: 5px;
+    font-size: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.form-module .toggle .tooltips:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    display: block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid rgba(0, 0, 0, 0.6);
+}
+.form-module .form {
+    display: none;
+    padding: 20px;
+}
+.form-module .form:nth-child(2) {
+    display: block;
+}
+.form-module h2 {
+    margin: 0 0 20px;
+    color: #33b5e5;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+}
+.form-module input {
+    outline: none;
+    display: block;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-wieght: 400;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+.form-module input:focus {
+    border: 1px solid #33b5e5;
+    color: #333333;
+}
+.form-module button {
+    cursor: pointer;
+    background: #33b5e5;
+    width: 100%;
+    border: 0;
+    padding: 10px 15px;
+    color: #ffffff;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+.form-module button:hover {
+    background: #178ab4;
+}
+.form-module .cta {
+    background: #f2f2f2;
+    width: 100%;
+    padding: 15px 40px;
+    box-sizing: border-box;
+    color: #666666;
+    font-size: 12px;
+    text-align: center;
+}
+.form-module .cta a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.form-module .credentials {
+
+  /*background: #f2f2f2;*/
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    color: #666666;
+    font-size: 12px;
+    /*text-align: center;*/
+}
+

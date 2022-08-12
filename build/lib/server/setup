@@ -1,0 +1,15 @@
+#/bin/sh
+
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO annotations-api.jar dewcis-code-signing-certificate
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO ecj-4.6.3.jar dewcis-code-signing-certificate
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO jsch.jar dewcis-code-signing-certificate
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO rxtxcomm.jar dewcis-code-signing-certificate
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO tomcat-dbcp.jar dewcis-code-signing-certificate
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO tomcat-embed-core.jar dewcis-code-signing-certificate
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO tomcat-embed-el.jar dewcis-code-signing-certificate
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO tomcat-embed-jasper.jar dewcis-code-signing-certificate
+jarsigner -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore ../dewciscs-2017.jks -storepass Baraza9NBO -keypass Baraza9NBO tomcat-embed-websocket.jar  dewcis-code-signing-certificate
+
+
+
+

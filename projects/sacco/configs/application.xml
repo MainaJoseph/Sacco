@@ -1,0 +1,18 @@
+<APP name="Sacco Application" org="org_id" password="change_password"  color="green" material="true" name="Sacco">
+	<MENU name="Sacco Application">
+		<MENU name="Registration">1</MENU>
+	</MENU>
+	<DESK w="700" name="Registration" key="1" h="500">
+		
+	</DESK>
+
+	<DESK w="700" name="Reset Passwords" key="2" h="500">
+		<FORM name="Reset Passwords" keyfield="sys_reset_id" table="sys_reset" edit="false" delete="false" audit="false" fornew="true" noorg="true" save.button="Reset Password">
+			<TEXTFIELD w="430" title="Request Email" h="20" y="30" x="10">request_email</TEXTFIELD>
+			<FORMVIEW name="Sys Reset" keyfield="sys_reset_id" table="sys_reset" linkfield="sys_reset_id" display="form" noorg="true">
+				<TEXTFIELD w="430" fnct="'Your Password has been sent to your email.'::text" title="Submit" y="110" h="20" x="10">disp</TEXTFIELD>
+			</FORMVIEW>		
+		</FORM>
+	</DESK>
+
+</APP>

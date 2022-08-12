@@ -1,0 +1,1 @@
+<SETUP path="sacco" newdbpath="jdbc:postgresql://localhost/sacco" dbname="sacco" dbclass="org.postgresql.Driver" dbpassword="1234" context="context.xml" dbusername="jm" dbpath="jdbc:postgresql://localhost/postgres"></SETUP>

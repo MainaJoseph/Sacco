@@ -1,0 +1,180 @@
+<APP password="change_password" color="green" material="true" org="org_id" name="sacco">
+	<MENU name="sacco">
+		<MENU name="My Details">65</MENU>	
+		<MENU dashboard="account" name="My Accounts">117</MENU>		
+		<MENU dashboard="loan" name="My Loans">122</MENU>
+		<MENU name="Loan Application">121</MENU>	
+		<MENU name="My Shares">285</MENU>		
+	</MENU>	
+
+	<DESK w="800" h="500" name="My details" key="65">
+		<FORMVIEW keyfield="member_id" name="My details" where="(business_account = 0)" user="entity_id" table="member_details_p" gohint="Follow this link to update your details">
+			<TEXTFIELD w="75" title="Person Title">person_title</TEXTFIELD>
+			<TEXTFIELD w="75" title="member Name">member_name</TEXTFIELD>
+			<TEXTFIELD w="75" title="Identification Number">identification_number</TEXTFIELD>
+			<TEXTFIELD w="75" title="Identification Type">identification_type</TEXTFIELD>
+			<TEXTFIELD w="75" title="Email">member_email</TEXTFIELD>
+			<TEXTFIELD w="75" title="Telephone Number">telephone_number</TEXTFIELD>
+			<TEXTFIELD w="75" title="Marital Status">marital_status</TEXTFIELD>
+			<TEXTFIELD w="75" title="Gender">gender</TEXTFIELD>
+			<JASPER reportfile="vw_member_details_p.jasper" name="Membership info" user="entity_id"></JASPER>
+			<FORM keyfield="member_id" name="My Details" cols="2" table="members">
+				<DEFAULT default="0">business_account</DEFAULT>
+				<TEXTFIELD w="550" h="20" x="10" y="50" title="Email" required="true">member_email</TEXTFIELD>
+				<TEXTFIELD w="550" h="20" x="10" y="70" title="Telephone Number" required="true" span="true">telephone_number</TEXTFIELD>
+				<TEXTFIELD w="550" h="20" x="290" y="70" title="Altenative Telephone">telephone_number2</TEXTFIELD>
+				<TEXTFIELD w="550" h="20" x="10" y="90" title="Address" required="true">address</TEXTFIELD>
+				<TEXTFIELD w="550" h="20" x="10" y="110" title="Town" required="true" span="true">town</TEXTFIELD>
+				<TEXTFIELD w="550" h="20" x="290" y="110" title="Zip Code">zip_code</TEXTFIELD>
+				<CHECKBOX w="550" h="20" x="10" y="170" title="Employed">employed</CHECKBOX>
+				<CHECKBOX w="550" h="20" x="290" y="170" title="Self Employed">self_employed</CHECKBOX>
+				<TEXTFIELD w="550" h="20" x="10" y="190" title="Employer Name">employer_name</TEXTFIELD>
+				<TEXTDECIMAL w="550" h="20" x="10" y="210" title="Monthly Salary" span="true">monthly_salary</TEXTDECIMAL>
+				<TEXTDECIMAL w="550" h="20" x="290" y="210" title="Monthly Net Income">monthly_net_income</TEXTDECIMAL>
+				<TEXTAREA w="550" h="30" x="10" y="230" rows="3" title="Employer Address" span="true">employer_address</TEXTAREA>
+				<TEXTFIELD w="550" h="20" x="290" y="230" title="Introduced By">introduced_by</TEXTFIELD>
+				<PICTURE access="ob" w="550" h="150" x="10" y="1">picture_file</PICTURE>
+				<TEXTAREA w="430" h="70" x="10" y="340">details</TEXTAREA>
+			</FORM>
+		</FORMVIEW>
+	</DESK>
+
+	<DESK w="700" h="550" name="My Accounts" key="117">
+		<GRID keyfield="deposit_account_id" name="Deposit Accounts" where="(approve_status = 'Approved')" user="entity_id" table="vw_entity_accounts">
+			<TEXTLINK w="75" title="Account Number">account_number</TEXTLINK>
+			<TEXTFIELD w="75" title="Product">product_name</TEXTFIELD>
+			<CHECKBOX w="75" title="Active">is_active</CHECKBOX>
+			<TEXTFIELD w="75" title="Currency">currency_symbol</TEXTFIELD>
+			<TEXTDECIMAL w="75" title="Current Balance">current_balance</TEXTDECIMAL>
+			<TEXTDECIMAL w="75" title="Available Balance">available_balance</TEXTDECIMAL>
+			<JASPER reportfile="vw_account_activity.jasper" name="Report"></JASPER>
+			<GRID edit="false" keyfield="account_activity_id" name="Account Activity" orderby="value_date desc, account_activity_id desc" linkfield="deposit_account_id" table="vw_account_activity">
+				<TEXTFIELD w="75" title="Activity ID">account_activity_id</TEXTFIELD>
+				<TEXTFIELD w="75" title="Activity">activity_type_name</TEXTFIELD>
+				<TEXTFIELD w="75" title="Frequency">activity_frequency_name</TEXTFIELD>
+				<TEXTFIELD w="75" title="Status">activity_status_name</TEXTFIELD>
+				<TEXTFIELD w="75" title="Currency">currency_symbol</TEXTFIELD>
+				<TEXTFIELD w="75" title="Transfer">transfer_account_no</TEXTFIELD>
+				<TEXTDATE w="75" title="Activity Date">activity_date</TEXTDATE>
+				<TEXTDATE w="75" title="Value Date">value_date</TEXTDATE>
+				<TEXTDECIMAL w="75" title="Credit">account_credit</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Debit">account_debit</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Balance">balance</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Exchange Rate">exchange_rate</TEXTDECIMAL>
+			</GRID>
+		</GRID>
+	</DESK>
+	
+	<DESK w="700" h="550" name="My Loans" key="122">
+		<GRID keyfield="loan_id" name="Loans" where="(approve_status = 'Approved')" user="entity_id" table="vw_entity_loans">
+			<TEXTLINK w="75" title="Loan Account">account_number</TEXTLINK>
+			<TEXTFIELD w="75" title="Product">product_name</TEXTFIELD>
+			<TEXTFIELD w="75" title="Currency">currency_symbol</TEXTFIELD>
+			<TEXTDECIMAL w="75" title="Principal Amount">principal_amount</TEXTDECIMAL>
+			<TEXTDECIMAL w="75" title="Interest Rate">interest_rate</TEXTDECIMAL>
+			<TEXTFIELD w="75" title="Repayment Period">repayment_period</TEXTFIELD>
+			<TEXTDECIMAL w="75" title="Repayment Amount">repayment_amount</TEXTDECIMAL>
+			<TEXTDATE w="75" title="Disbursed Date">disbursed_date</TEXTDATE>
+			<TEXTDECIMAL w="75" title="Committed Balance">committed_balance</TEXTDECIMAL>
+			<TEXTDECIMAL w="75" title="Actual Balance">actual_balance</TEXTDECIMAL>
+			<JASPER reportfile="vw_loans_a.jasper" name="Report"></JASPER>
+			<GRID keyfield="account_activity_id" name="Loan Activity" orderby="value_date desc, account_activity_id desc" linkfield="loan_id" table="vw_loan_activity">
+				<TEXTFIELD w="75" title="Activity ID">account_activity_id</TEXTFIELD>
+				<TEXTFIELD w="75" title="Activity">activity_type_name</TEXTFIELD>
+				<TEXTFIELD w="75" title="Frequency">activity_frequency_name</TEXTFIELD>
+				<TEXTFIELD w="75" title="Status">activity_status_name</TEXTFIELD>
+				<TEXTFIELD w="75" title="Currency">currency_symbol</TEXTFIELD>
+				<TEXTFIELD w="75" title="Transfer">transfer_account_no</TEXTFIELD>
+				<TEXTDATE w="75" title="Activity Date">activity_date</TEXTDATE>
+				<TEXTDATE w="75" title="Value Date">value_date</TEXTDATE>
+				<TEXTDECIMAL w="75" title="Credit">account_credit</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Debit">account_debit</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Balance">balance</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Exchange Rate">exchange_rate</TEXTDECIMAL>
+			</GRID>
+		</GRID>
+	</DESK>
+
+	<DESK w="700" h="550" name="New Loans" key="121">
+		<GRID keyfield="loan_id" name="New Loans" where="(approve_status IN ('Draft', 'Completed'))" user="entity_id" table="vw_entity_loans">
+			<TEXTFIELD w="75" title="Loan Account">account_number</TEXTFIELD>
+			<TEXTFIELD w="75" title="Product">product_name</TEXTFIELD>
+			<TEXTFIELD w="75" title="Currency">currency_symbol</TEXTFIELD>
+			<TEXTDECIMAL w="75" title="Principal Amount">principal_amount</TEXTDECIMAL>
+			<TEXTDECIMAL w="75" title="Interest Rate">interest_rate</TEXTDECIMAL>
+			<TEXTFIELD w="75" title="Repayment Period">repayment_period</TEXTFIELD>
+			<TEXTDECIMAL w="75" title="Repayment Amount">repayment_amount</TEXTDECIMAL>
+			<TEXTFIELD w="75" title="Approve Status">approve_status</TEXTFIELD>
+			<ACTIONS>
+				<ACTION approval="3" fnct="apply_approval">Approval Application</ACTION>
+			</ACTIONS>
+			<FORM keyfield="loan_id" name="Loans" table="loans">
+				<USERFIELD>entity_id</USERFIELD>
+				<COMBOBOX w="430" h="20" lpfield="product_name" x="10" y="10" lptable="products" where="(loan_account = true) AND (is_active = true)" title="Product">product_id</COMBOBOX>
+				<COMBOBOX w="430" h="20" lpfield="deposit_account_disp" x="10" y="30" lptable="vw_entity_accounts" where="(is_active = true)" title="Disburse Account" lpkey="account_number" user="entity_id">disburse_account</COMBOBOX>
+				<TEXTDECIMAL w="150" h="20" x="10" y="50" title="Principal Amount" required="true">principal_amount</TEXTDECIMAL>
+				<TEXTFIELD w="150" h="20" x="290" y="50" title="Repayment Period" required="true">repayment_period</TEXTFIELD>
+				<TEXTAREA w="430" h="70" x="10" y="2" tag="Details">details</TEXTAREA>
+			</FORM>
+			<GRID keyfield="guarantee_id" name="Guarantees" linkfield="loan_id" table="vw_guarantees">
+				<TEXTFIELD w="75" title="Guarantee ID">guarantee_id</TEXTFIELD>
+				<TEXTDECIMAL w="75" title="Guarantee Amount">guarantee_amount</TEXTDECIMAL>
+				<TEXTTIMESTAMP w="75" title="Application Date">application_date</TEXTTIMESTAMP>
+				<TEXTFIELD w="75" title="Approve Status">approve_status</TEXTFIELD>
+				<ACTIONS>
+					<ACTION approval="4" fnct="apply_approval">Approval Application</ACTION>
+				</ACTIONS>
+				<FORM keyfield="guarantee_id" name="Guarantees" linkfield="loan_id" table="guarantees">
+					<USERFIELD>entity_id</USERFIELD>
+					<COMBOBOX w="430" h="20" lpfield="customer_name" x="10" y="10" lptable="customers" title="Customer">customer_id</COMBOBOX>
+					<TEXTDECIMAL w="150" h="20" x="10" y="30" title="Guarantee Amount">guarantee_amount</TEXTDECIMAL>
+					<TEXTAREA w="430" h="70" x="10" y="50" title="Details">details</TEXTAREA>
+				</FORM>
+			</GRID>
+			<GRID keyfield="collateral_id" name="Collaterals" linkfield="loan_id" table="vw_collaterals">
+				<TEXTFIELD w="75" title="Collateral ID">collateral_id</TEXTFIELD>
+				<TEXTDECIMAL w="75" title="Collateral Amount">collateral_amount</TEXTDECIMAL>
+				<CHECKBOX w="75" title="Collateral Received">collateral_received</CHECKBOX>
+				<CHECKBOX w="75" title="Collateral Released">collateral_released</CHECKBOX>
+				<TEXTTIMESTAMP w="75" title="Application Date">application_date</TEXTTIMESTAMP>
+				<TEXTFIELD w="75" title="Approve Status">approve_status</TEXTFIELD>
+				<ACTIONS>
+					<ACTION approval="5" fnct="apply_approval">Approval Application</ACTION>
+				</ACTIONS>
+				<FORM keyfield="collateral_id" name="Collaterals" linkfield="loan_id" table="collaterals">
+					<USERFIELD>entity_id</USERFIELD>
+					<COMBOBOX w="430" h="20" lpfield="collateral_type_name" x="10" y="10" lptable="collateral_types" title="Collateral Type">collateral_type_id</COMBOBOX>
+					<TEXTDECIMAL w="150" h="20" x="10" y="30" title="Collateral Amount">collateral_amount</TEXTDECIMAL>
+					<CHECKBOX w="150" h="20" x="290" y="30" title="Collateral Received">collateral_received</CHECKBOX>
+					<CHECKBOX w="150" h="20" x="10" y="50" title="Collateral Released">collateral_released</CHECKBOX>
+					<TEXTAREA w="430" h="70" x="10" y="70" title="Details">details</TEXTAREA>
+				</FORM>
+			</GRID>
+		</GRID>
+	</DESK>
+	<DESK w="700" h="550" name="My Commodities" key="285">
+		<GRID keyfield="deposit_account_id" name="Deposit Accounts" where="(approve_status = 'Approved')" user="entity_id" table="vw_entity_accounts">
+			<TEXTLINK w="75" title="Account Number">account_number</TEXTLINK>
+			<TEXTFIELD w="75" title="Product">product_name</TEXTFIELD>
+			<CHECKBOX w="75" title="Active">is_active</CHECKBOX>
+			<TEXTFIELD w="75" title="Currency">currency_symbol</TEXTFIELD>
+			<TEXTDATE w="75" title="Last Closing Date">last_closing_date</TEXTDATE>
+			<TEXTDECIMAL w="75" title="Credit Limit">credit_limit</TEXTDECIMAL>
+			<TEXTFIELD w="75" title="Narrative">narrative</TEXTFIELD>
+			<TEXTDECIMAL w="75" title="Current Balance">current_balance</TEXTDECIMAL>
+			<TEXTDECIMAL w="75" title="Available Balance">available_balance</TEXTDECIMAL>
+			<JASPER reportfile="vw_commodity_summary.jasper" name="Report"></JASPER>
+			<GRID keyfield="commodity_trade_id" name="Commodity Trades" orderby="trade_date desc, commodity_trade_id desc" linkfield="deposit_account_id" table="vw_commodity_trades">
+				<TEXTFIELD w="75" title="Commodity">commodity_name</TEXTFIELD>
+				<TEXTDATE w="75" title="Trade Date">trade_date</TEXTDATE>
+				<TEXTFIELD w="75" title="Approve Status">approve_status</TEXTFIELD>
+				<TEXTDECIMAL w="75" title="Unit Credit">unit_credit</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Unit Debit">unit_debit</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Price">price</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Trade Credit">trade_credit</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Trade Debit">trade_debit</TEXTDECIMAL>
+			</GRID>
+		</GRID>
+	</DESK>
+
+</APP>

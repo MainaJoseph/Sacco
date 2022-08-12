@@ -1,0 +1,136 @@
+<APP>
+	<MENU name="sacco">
+		<MENU access="transactions" icon="fa fa-exchange font-green-sharp" name="Transactions">115</MENU>
+		<MENU access="loans" icon="fa fa-credit-card font-green-sharp" name="Loans">120</MENU>
+		<MENU access="admin" icon="fa fa-users font-green-sharp" name="Members">105</MENU>
+		<MENU access="processing" icon="fa fa-cubes font-green-sharp" name="Processing">125</MENU>
+		<MENU access="investments" icon="fa fa-building-o font-green-sharp" name="Investments">290</MENU>
+		<MENU access="members" icon="fa fa-exchange font-green-sharp" name="Guarantee">305</MENU>
+		<MENU access="service_desk" icon="fa fa-list font-green-sharp" name="Service Desk">
+			<MENU access="members" icon="fa fa-user font-green-sharp fa-border" name="My Details">null</MENU>
+			<MENU access="members" icon="fa fa-cubes font-green-sharp fa-border" name="My Accounts">null</MENU>
+			<MENU access="members" icon="fa fa-credit-card font-green-sharp fa-border" name="Loans">null</MENU>
+			<MENU access="members" icon="fa fa-briefcase font-green-sharp fa-border" name="My Commodities">null</MENU>
+			<MENU access="members" icon="fa fa-external-link font-green-sharp fa-border" name="Transfers">null</MENU>
+			<MENU access="members" icon="fa fa-external-link font-green-sharp fa-border" name="Issue Tracking">null</MENU>
+		</MENU>
+		<MENU access="admin" icon="fa fa-list font-green-sharp" name="Operations">
+			<MENU access="sacco_business" icon="icon-users font-green-sharp fa-border" name="Clients and Suppliers">null</MENU>
+			<MENU access="sacco_business" icon="fa fa-folder-open-o font-green-sharp fa-border" name="Sales">null</MENU>
+			<MENU access="sacco_business" icon="fa fa-folder-o font-green-sharp fa-border" name="Purchase">null</MENU>
+			<MENU icon="fa fa-exchange font-green-sharp fa-border" name="Transaction Ledger">null</MENU>
+			<MENU icon="icon-calendar font-green-sharp fa-border" name="Fiscal Years">null</MENU>
+			<MENU icon="fa fa-book font-green-sharp fa-border" name="Journals">null</MENU>
+			<MENU access="admin" icon="fa fa-arrows-h font-green-sharp fa-border" name="SMS, e-mails, News">null</MENU>
+			<MENU icon="fa fa-money font-green-sharp fa-border" name="Petty Cash">null</MENU>
+			<MENU icon="fa fa-arrows-h font-green-sharp fa-border" name="Petty Cash Request">null</MENU>
+			<MENU icon="fa fa-question font-green-sharp fa-border" name="Issue Tracking">null</MENU>
+		</MENU>
+		<MENU access="admin" icon="fa fa-list font-green-sharp" name="Adminstration">
+			<MENU icon="icon-users font-green-sharp fa-border" name="Applicants">null</MENU>
+			<MENU icon="fa fa-check-square-o font-green-sharp fa-border" name="Approvals">null</MENU>
+			<MENU icon="fa fa-group font-green-sharp fa-border" name="Sacco Entitys">null</MENU>
+			<MENU icon="fa fa-sign-out font-green-sharp fa-border" name="Member Exit">null</MENU>
+			<MENU access="Client_forms" icon="icon-book-open font-green-sharp fa-border" name="Client Forms">null</MENU>
+			<MENU access="file_forms" icon="fa fa-file-text-o font-green-sharp fa-border" name="Files and Forms">null</MENU>
+			<MENU icon="fa fa-check-square-o font-green-sharp fa-border" name="All Approvals">null</MENU>
+			<MENU icon="fa fa-arrow-right font-green-sharp fa-border" name="Error Messages">null</MENU>
+		</MENU>
+		<MENU access="configurations" icon="fa fa-list font-green-sharp" name="Configurations">
+			<MENU icon="fa fa-cogs font-green-sharp fa-border" name="Products">null</MENU>
+			<MENU icon="fa fa-cube font-green-sharp fa-border" name="Commoditys">null</MENU>
+			<MENU icon="fa fa-sitemap font-green-sharp fa-border" name="Sacco Definations">null</MENU>
+			<MENU access="admin" icon="icon-bubbles font-green-sharp fa-border" name="SMS,EMails, NEWS">null</MENU>
+			<MENU icon="fa fa-suitcase font-green-sharp fa-border" name="Items">null</MENU>
+			<MENU icon="fa fa-sort-amount-asc font-green-sharp fa-border" name="Chat of Accounts">null</MENU>
+			<MENU icon="fa fa-columns font-green-sharp fa-border" name="Workflows">null</MENU>
+		</MENU>
+		<MENU access="sacco_reports" icon="fa fa-list font-green-sharp" name="Sacco Reports">
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="members">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Deposit accounts">null</MENU>
+			<MENU access="loans" icon="icon-book-open font-green-sharp fa-border" name="Loans">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Member Statements">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Sacco Statements">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Configuration">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Petty Cash">null</MENU>
+		</MENU>
+		<MENU access="operations" icon="fa fa-list font-green-sharp" name="Operations Reports">
+			<MENU access="sacco_business" icon="icon-book-open font-green-sharp fa-border" name="Operational Entitys">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Bank Accounts">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Tax Types">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Items">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Chart of Accounts">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Transaction Ledger">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Journals">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Trial Balance">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="income and Expenditure">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Balance Sheet">null</MENU>
+			<MENU access="sacco_business" icon="icon-book-open font-green-sharp fa-border" name="Statement">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Issues">null</MENU>
+		</MENU>
+		<MENU access="members" icon="fa fa-list font-green-sharp" name="Accounts Statement">
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Transactions A/C">null</MENU>
+			<MENU icon="icon-book-open font-green-sharp fa-border" name="Contributions">null</MENU>
+		</MENU>
+		<MENU access="admin" icon="fa fa-list font-green-sharp" name="master Configs">
+			<MENU access="admin" icon="fa fa-arrows-h font-green-sharp fa-border" name="Subscriptions">null</MENU>
+		</MENU>
+	</MENU>
+	<DESK w="700" h="500" name="Dashboard">
+		<DASHBOARD w="700" name="Dashboard">
+			<TILE access="admin" jumpview="105:0" name="Total members" where="(approve_status = 'Approved') AND (business_account != 2)" groupby="org_id" table="members">
+				<TEXTFIELD w="75" icon="fa fa-group font-green-sharp" fnct="COALESCE(count(member_id), 0)" title="Total member">total_members</TEXTFIELD>
+			</TILE>
+			<TILE access="admin" jumpview="110:0" name="Total Products" where="(approve_status = 'Approved')" groupby="org_id" table="products">
+				<TEXTFIELD w="75" icon="fa fa-cogs font-green-sharp" fnct="COALESCE(count(product_id), 0)" title="Total Products">total_products</TEXTFIELD>
+			</TILE>
+			<TILE access="loans" jumpview="120:0" name="Total Loans" where="(approve_status = 'Approved')" groupby="org_id" table="loans">
+				<TEXTFIELD w="75" icon="fa fa-credit-card font-green-sharp" fnct="COALESCE(count(loan_id), 0)" title="Total Loans">total_loans</TEXTFIELD>
+			</TILE>
+			<TILE access="loans" name="Total Loan Amount" where="(approve_status = 'Approved')" groupby="org_id" table="loans">
+				<TEXTFIELD w="75" icon="fa fa-briefcase font-green-sharp" fnct="COALESCE(sum(principal_amount), 0)" title="Total Loan Amount">total_loan_amount</TEXTFIELD>
+			</TILE>
+			<TILE access="members" jumpview="122:3" name="Loan Products" where="(loan_account = true)" groupby="org_id" table="products">
+				<TEXTFIELD w="75" icon="icon icon-layers font-green-sharp" fnct="COALESCE(count(product_id), 0)" title="Loan Products">total_products</TEXTFIELD>
+			</TILE>
+			<TILE access="members" jumpview="305:0" name="Total Guarantee Requests" groupby="entity_id,org_id" user="entity_id" table="vw_guarantees_request">
+				<TEXTFIELD w="75" icon="icon icon-share-alt font-green-sharp" fnct="COALESCE(count(entity_id), 0)" title="Guarantee Requests">total_requests</TEXTFIELD>
+			</TILE>
+			<TILE access="members" jumpview="315:0" name="Open Issues" groupby="entity_id,org_id" user="entity_id" table="vw_member_issues">
+				<TEXTFIELD w="75" icon="icon icon-share-alt font-green-sharp" fnct="COALESCE(count(entity_id), 0)" title="Open Issues">total_isues</TEXTFIELD>
+			</TILE>
+			<TILELIST access="transactions" keyfield="deposit_account_id" name="Core Accounts" where="(approve_status = 'Approved') AND (business_account = 2)" table="vw_deposit_accounts">
+				<TEXTLINK w="45" title="Account">account_number</TEXTLINK>
+				<TEXTFIELD w="45" title="Currency">currency_symbol</TEXTFIELD>
+				<TEXTFIELD w="75" title="Narrative">narrative</TEXTFIELD>
+				<TEXTDECIMAL w="75" title="Current">current_balance</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Available">available_balance</TEXTDECIMAL>
+			</TILELIST>
+			<TILELIST access="members" keyfield="deposit_account_id" name="Deposit Accounts" where="(approve_status = 'Approved')" user="entity_id" table="vw_entity_accounts">
+				<TEXTLINK w="45" title="Account">account_number</TEXTLINK>
+				<TEXTFIELD w="45" title="Currency">currency_symbol</TEXTFIELD>
+				<TEXTFIELD w="75" title="Product">product_name</TEXTFIELD>
+				<TEXTDECIMAL w="75" title="Current">current_balance</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Available">available_balance</TEXTDECIMAL>
+			</TILELIST>
+			<TILELIST access="members" keyfield="loan_id" name="Loans" where="(approve_status = 'Approved')" user="entity_id" table="vw_entity_loans">
+				<TEXTLINK w="75" title="Loan">account_number</TEXTLINK>
+				<TEXTFIELD w="75" title="Currency">currency_symbol</TEXTFIELD>
+				<TEXTDECIMAL w="75" title="Principal">principal_amount</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Repayment">repayment_amount</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Balance">actual_balance</TEXTDECIMAL>
+			</TILELIST>
+			<TILELIST access="members" keyfield="guarantee_id" name="Guarantees" where="(active_guarantee = true)" user="entity_id" table="vw_guarantees_request">
+				<TEXTFIELD w="75" title="Member">member_name</TEXTFIELD>
+				<TEXTFIELD w="75" title="Loan">product_name</TEXTFIELD>
+				<TEXTDECIMAL w="75" title="Loan Amount">principal_amount</TEXTDECIMAL>
+				<TEXTDECIMAL w="75" title="Guarantee Amount">guarantee_amount</TEXTDECIMAL>
+				<CHECKBOX w="50" title="Accepted">guarantee_accepted</CHECKBOX>
+			</TILELIST>
+			<TILELIST keyfield="sys_news_id" name="News" where="(publish = true)" table="sys_news">
+				<TEXTFIELD w="75" title="News Title">sys_news_title</TEXTFIELD>
+				<TEXTAREA w="430" h="70" x="10" y="70" title="Details">details</TEXTAREA>
+			</TILELIST>
+		</DASHBOARD>
+	</DESK>
+</APP>

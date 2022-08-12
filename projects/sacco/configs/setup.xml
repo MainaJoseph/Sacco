@@ -1,0 +1,4 @@
+<SETUP newdbpath="jdbc:postgresql://localhost/hr" dbpassword="Baraza2011" 
+	dbpath="jdbc:postgresql://localhost/postgres" dbname="sacco" path="sacco" 
+	dbclass="org.postgresql.Driver" dbusername="postgres" context="context.xml">
+</SETUP>
